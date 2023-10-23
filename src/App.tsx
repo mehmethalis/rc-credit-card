@@ -8,7 +8,6 @@ const Section = styled.div`
   justify-content: center;
   align-items: center;
   height: 95vh;
-  background: #121321;
 `
 
 const Container = styled.div`

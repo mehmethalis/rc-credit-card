@@ -37,5 +37,6 @@ export default defineConfig((configEnv) => ({
         },
       },
     },
+    copyPublicDir: false,
   },
 }))

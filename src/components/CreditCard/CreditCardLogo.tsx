@@ -42,18 +42,27 @@ export const CreditCardLogo = memo(function Logo({ cardNo }: { cardNo: string })
   useEffect(() => {
     setCardType(getCardType(cardNo))
   }, [cardNo])
+
+  const masterLogo =
+    '//images.ctfassets.net/zdg1aayn50br/7BjegDiWvxuk1Fr8qKCSKB/ad12d3daa71098ff635676a55cb8ad43/logo.png'
+
+  const visaLogo =
+    '//images.ctfassets.net/zdg1aayn50br/2jy88THnaK3SQ47KXkJgCC/91d9a4b4be4f8724337a9afe301a2c50/visa.png'
+
+  const discoverLogo =
+    '//images.ctfassets.net/zdg1aayn50br/1s9zW8eCJk4HM9WpHFrPQI/6bcaabaef522efa5e74f832b9538ad4e/discover.png'
   return (
     <CardLogoContainer>
       {cardType !== 'amex' && (
         <CardLogo
           src={
             cardType === 'master'
-              ? '/logo.png'
+              ? masterLogo
               : cardType === 'visa'
-              ? '/visa.png'
+              ? visaLogo
               : cardType === 'disvocer'
-              ? '/discover.png'
-              : '/logo.png'
+              ? discoverLogo
+              : masterLogo
           }
         />
       )}

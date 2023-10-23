@@ -1,3 +1,6 @@
+import './style.css'
+
+import { useRef } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
 
@@ -15,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const Card = styled.div`
-  @import url("@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap')");
+  @import url("@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');");
   height: 100%;
   width: 100%;
   padding: 25px;
@@ -191,15 +194,20 @@ export const CreditCard = (props: CreditCardProps) => {
   })
 
   const { customTheme } = useCustomTheme(theme)
+  const ref = useRef(null)
   return (
-    <CSSTransition in={isFrontFace} timeout={0} classNames="flip">
+    <CSSTransition in={!isFrontFace} timeout={300} classNames="flip" nodeRef={ref}>
       <ThemeProvider theme={{ isFrontFace, ...customTheme }}>
         <GlobalStyle />
         <Card>
           <CardHeader>
             <CreditCardLogo cardNo={cardNumber} />
             <CardBackHeaderExplanation>{backHeaderExplanation}</CardBackHeaderExplanation>
-            <CardChip src={'/chip.png'} />
+            <CardChip
+              src={
+                '//images.ctfassets.net/zdg1aayn50br/5TxN9qW9WG1MZ3mZ68Fj55/1259021f9f1e90cfb41afe35b6171350/chip.png'
+              }
+            />
           </CardHeader>
           <CardBody>
             <MagneticStrip />
