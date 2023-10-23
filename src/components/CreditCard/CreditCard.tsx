@@ -1,5 +1,3 @@
-import './flip-transation.css'
-
 import { CSSTransition } from 'react-transition-group'
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
 
@@ -21,6 +19,8 @@ const Card = styled.div`
   height: 100%;
   width: 100%;
   padding: 25px;
+  width: ${({ theme }) => theme.width}px;
+  height: ${({ theme }) => theme.height}px;
   border-radius: ${({ theme }) => theme.borderRadius}px;
   backdrop-filter: blur(${({ theme }) => theme.backdropBlur}px);
   ${({ theme }) =>
@@ -146,6 +146,8 @@ const Signature = styled.span`
 `
 
 export type CreditCardTheme = {
+  width?: number
+  height?: number
   borderRadius?: number
   background?: [number, number, number, number] | string
   backdropBlur?: number
