@@ -1,10 +1,11 @@
-import styled, { ThemeProvider } from 'styled-components'
-import { createGlobalStyle } from 'styled-components'
-import { CSSTransition } from 'react-transition-group'
 import './flip-transation.css'
-import { useFormatter } from './useFormatter'
+
+import { CSSTransition } from 'react-transition-group'
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
+
 import { CreditCardLogo } from './CreditCardLogo'
 import { useCustomTheme } from './useCustomTheme'
+import { useFormatter } from './useFormatter'
 
 const GlobalStyle = createGlobalStyle`
   * {

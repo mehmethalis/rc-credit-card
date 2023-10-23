@@ -1,6 +1,7 @@
-import styled from 'styled-components'
-import { CreditCard } from './components'
 import { useState } from 'react'
+import styled from 'styled-components'
+
+import { CreditCard } from './components'
 
 const Section = styled.div`
   display: flex;

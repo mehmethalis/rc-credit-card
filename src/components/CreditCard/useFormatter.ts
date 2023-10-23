@@ -30,7 +30,7 @@ export const useFormatter = (props: UseFormatterProps) => {
       .replace(/^([0-1])([3-9])$/g, '0$1/$2')
       .replace(/^(0?[1-9]|1[0-2])([0-9]{2})$/g, '$1/$2')
       .replace(/^([0]+)\/|[0]+$/g, '0')
-      .replace(/[^\d\/]|^[\/]*$/g, '')
+      .replace(/[^\d\\/]|^[\\/]*$/g, '')
       .replace(/\/\//g, '/')
   }, [rawValidThru])
 
