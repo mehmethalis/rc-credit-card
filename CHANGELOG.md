@@ -1,5 +1,11 @@
 # rc-credit-card
 
+## 0.0.3
+
+### Patch Changes
+
+- a539616: feat(logos): update card logos in cdn
+
 ## 0.0.2
 
 ### Patch Changes
