@@ -1,4 +1,3 @@
-import { useRef } from 'react'
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
 
 import { CreditCardLogo } from './CreditCardLogo'
@@ -191,7 +190,6 @@ export const CreditCard = (props: CreditCardProps) => {
   })
 
   const { customTheme } = useCustomTheme(theme)
-  const ref = useRef(null)
   return (
     <ThemeProvider theme={{ isFrontFace, ...customTheme }}>
       <GlobalStyle />
