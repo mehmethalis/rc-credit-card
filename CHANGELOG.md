@@ -1,5 +1,11 @@
 # rc-credit-card
 
+## 0.0.4
+
+### Patch Changes
+
+- 9da01b3: update theme and packkages
+
 ## 0.0.3
 
 ### Patch Changes
