@@ -2,7 +2,7 @@
 
 ## Installation
 
-Use the package manager [pnpm / yarn / npm](https://pip.pypa.io/en/stable/) to install foobar.
+Use the package manager [pnpm / yarn / npm](https://pip.pypa.io/en/stable/) to install rc-credit-card.
 
 ```bash
 pnpm install rc-credit-card
