@@ -1,7 +1,4 @@
-import './style.css'
-
 import { useRef } from 'react'
-import { CSSTransition } from 'react-transition-group'
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
 
 import { CreditCardLogo } from './CreditCardLogo'
@@ -14,6 +11,10 @@ const GlobalStyle = createGlobalStyle`
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif; 
+  
+  }
+  label {
+    color : #000;
   }
 `
 
@@ -99,19 +100,16 @@ const CardValidDate = styled.h5`
 const CardBackHeaderExplanation = styled.h6`
   margin-top: 0;
   font-size: 8px;
-  transform: rotateY(180deg);
   ${({ theme }) => theme.isFrontFace && `display: none;`}
 `
 
 const CardBackBodyExplanation = styled.h5`
   font-size: 8px;
   margin-top: 10px;
-  transform: rotateY(180deg);
   ${({ theme }) => theme.isFrontFace && `display: none;`}
 `
 
 const CardSignature = styled.div`
-  transform: rotateY(180deg);
   ${({ theme }) => theme.isFrontFace && `display: none;`}
 `
 
@@ -124,7 +122,6 @@ const CardSignatureNo = styled.i`
   margin-right: -30px;
   margin-left: 5px;
   z-index: -1;
-  transform: rotateY(-180deg);
   ${({ theme }) => theme.isFrontFace && `display: none;`}
 `
 
@@ -196,38 +193,36 @@ export const CreditCard = (props: CreditCardProps) => {
   const { customTheme } = useCustomTheme(theme)
   const ref = useRef(null)
   return (
-    <CSSTransition in={!isFrontFace} timeout={300} classNames="flip" nodeRef={ref}>
-      <ThemeProvider theme={{ isFrontFace, ...customTheme }}>
-        <GlobalStyle />
-        <Card>
-          <CardHeader>
-            <CreditCardLogo cardNo={cardNumber} />
-            <CardBackHeaderExplanation>{backHeaderExplanation}</CardBackHeaderExplanation>
-            <CardChip
-              src={
-                '//images.ctfassets.net/zdg1aayn50br/5TxN9qW9WG1MZ3mZ68Fj55/1259021f9f1e90cfb41afe35b6171350/chip.png'
-              }
-            />
-          </CardHeader>
-          <CardBody>
-            <MagneticStrip />
-            <CardBodySection>
-              <CardLabel>Card Number</CardLabel>
-              <CardNumber>{cardNo}</CardNumber>
-              <CardAuthor>{name}</CardAuthor>
-            </CardBodySection>
-            <CardBodySection>
-              <Signature>
-                <CardSignature>CCV</CardSignature>
-                <CardSignatureNo> {CCV}</CardSignatureNo>
-              </Signature>
-              <CardBackBodyExplanation>{backBodyExplanation}</CardBackBodyExplanation>
-              <CardValidLabel>{validThruLabel}</CardValidLabel>
-              <CardValidDate>{validDate}</CardValidDate>
-            </CardBodySection>
-          </CardBody>
-        </Card>
-      </ThemeProvider>
-    </CSSTransition>
+    <ThemeProvider theme={{ isFrontFace, ...customTheme }}>
+      <GlobalStyle />
+      <Card>
+        <CardHeader>
+          <CreditCardLogo cardNo={cardNumber} />
+          <CardBackHeaderExplanation>{backHeaderExplanation}</CardBackHeaderExplanation>
+          <CardChip
+            src={
+              '//images.ctfassets.net/zdg1aayn50br/5TxN9qW9WG1MZ3mZ68Fj55/1259021f9f1e90cfb41afe35b6171350/chip.png'
+            }
+          />
+        </CardHeader>
+        <CardBody>
+          <MagneticStrip />
+          <CardBodySection>
+            <CardLabel>Card Number</CardLabel>
+            <CardNumber>{cardNo}</CardNumber>
+            <CardAuthor>{name}</CardAuthor>
+          </CardBodySection>
+          <CardBodySection>
+            <Signature>
+              <CardSignature>CCV</CardSignature>
+              <CardSignatureNo> {CCV}</CardSignatureNo>
+            </Signature>
+            <CardBackBodyExplanation>{backBodyExplanation}</CardBackBodyExplanation>
+            <CardValidLabel>{validThruLabel}</CardValidLabel>
+            <CardValidDate>{validDate}</CardValidDate>
+          </CardBodySection>
+        </CardBody>
+      </Card>
+    </ThemeProvider>
   )
 }

@@ -32,20 +32,38 @@ function App() {
     <Section>
       <Container>
         <span>Card No</span>
-        <input value={cardNo} onChange={(e) => setCardNo(e.target.value)} />
+        <input
+          value={cardNo}
+          placeholder="card no"
+          onChange={(e) => setCardNo(e.target.value)}
+        />
         <span>Name</span>
-        <input value={name} onChange={(e) => setName(e.target.value)} />
+        <input
+          value={name}
+          placeholder="name"
+          onChange={(e) => setName(e.target.value)}
+        />
         <span>Valid</span>
-        <input value={valid} onChange={(e) => setValid(e.target.value)} />
+        <input
+          value={valid}
+          placeholder="valid"
+          onChange={(e) => setValid(e.target.value)}
+        />
         <span>CCV</span>
         <input
           value={ccv}
+          placeholder="ccv"
           onChange={(e) => setCCv(e.target.value)}
           onFocus={() => setIsFrontFace(false)}
           onBlur={() => setIsFrontFace(true)}
         />
 
-        <button onClick={() => setIsFrontFace(!isFrontFace)}>Flip Card</button>
+        <button
+          style={{ marginTop: '20px', padding: 3 }}
+          onClick={() => setIsFrontFace(!isFrontFace)}
+        >
+          Flip Card
+        </button>
       </Container>
       <Container>
         <CreditCard
