@@ -10,6 +10,8 @@ pnpm install rc-credit-card
 
 ## Usage
 
+[Demo with code](https://stackblitz.com/edit/stackblitz-starters-byqt2f?file=src%2FApp.tsx)
+
 ```ts
 import * as React from 'react'
 import { CreditCard } from 'rc-credit-card'
